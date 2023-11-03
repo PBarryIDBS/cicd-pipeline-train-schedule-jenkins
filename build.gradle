@@ -34,12 +34,6 @@ npm_build.dependsOn npm_test
 npm_test.dependsOn npmInstall
 npm_build.dependsOn npmInstall
 
-
-// Enable the stacktrace option
-gradle.taskGraph.whenReady { taskGraph ->
-  taskGraph.getAllTasks().each { task ->
-    task.getExtensions().configure(org.gradle.api.invocation.Gradle. StackTrace .class) {
-      it.stacktrace = true
-    }
-  }
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
