@@ -19,11 +19,7 @@ pipeline {
 							continueOnError: false,
 							publishers: [
 								sshPublisherDesc(
-									configName: 'STAGING',
-									sshCredentials: [
-										username: "$USERNAME",
-										encryptedPassphrase: "$USERPASS"
-									],
+									configName: 'STAGING'
 									transfers: [
 										sshTransfer(
 											sourceFiles: 'dist/trainschedule.zip',
