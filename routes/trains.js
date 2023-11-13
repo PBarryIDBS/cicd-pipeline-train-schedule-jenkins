@@ -6,7 +6,7 @@ var FileSync = require('lowdb/adapters/FileSync')
 var adapter = new FileSync('/opt/train-schedule/data/trains.json')
 var db = low(adapter)
 
- GET trains listing. 
+ GET trains listing again. 
 router.get('/', function(req, res, next) {
   res.send(db.get('trains').sortBy('name').value());
 });*/
