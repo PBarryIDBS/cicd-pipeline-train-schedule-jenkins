@@ -26,7 +26,7 @@ pipeline {
 											removePrefix: 'dist/',
 											remoteDirectory: '/tmp',
 											execCommand: "sudo docker container stop egg",
-											execCommand: "sudo docker container stop train-schedule-app && sudo docker container rm train-schedule-app && sudo docker rmi $(sudo docker images | grep 'train-schedule-app') && rm -rf /opt/train-schedule/* && unzip -o /tmp/trainSchedule.zip -d /opt/train-schedule && sudo docker build --no-cache -t train-schedule-app:${env.BUILD_NUMBER} /opt/train-schedule/ && sudo docker container run -d --name train-schedule-app --restart=unless-stopped -p 3000:3000 train-schedule-app:${env.BUILD_NUMBER}"
+											execCommand: "sudo docker container stop train-schedule-app && sudo docker container rm train-schedule-app && sudo docker rmi \$(sudo docker images | grep 'train-schedule-app') && rm -rf /opt/train-schedule/* && unzip -o /tmp/trainSchedule.zip -d /opt/train-schedule && sudo docker build --no-cache -t train-schedule-app:${env.BUILD_NUMBER} /opt/train-schedule/ && sudo docker container run -d --name train-schedule-app --restart=unless-stopped -p 3000:3000 train-schedule-app:${env.BUILD_NUMBER}"
 										)
 									]
 								)
