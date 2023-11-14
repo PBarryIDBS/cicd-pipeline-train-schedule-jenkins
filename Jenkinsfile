@@ -22,7 +22,7 @@ pipeline {
 									configName: 'STAGING',
 									transfers: [
 										sshTransfer(
-											sourceFiles: 'dist/trainschedule.zip',
+											sourceFiles: 'dist/trainSchedule.zip',
 											removePrefix: 'dist/',
 											remoteDirectory: '/tmp',
 											execCommand: 'sudo /usr/bin/systemctl stop train-schedule.service && rm -rf /opt/train-schedule/* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule && /usr/bin/systemctl start train-schedule.service'
